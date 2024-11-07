@@ -1,99 +1,241 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Referencias Bibliográficas</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .reference {
-            margin-bottom: 15px;
-            padding: 10px;
-            background-color: #ffffff;
-            border-left: 4px solid #007BFF;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .reference-title {
-            font-weight: bold;
-            color: #0056b3;
-        }
-        .author, .source {
-            color: #555;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.6;
+        background-image: url(./Captura\ de\ pantalla\ 2024-11-07\ 145735.png);
+      }
+      h1 {
+        text-align: center;
+        color: #fff;
+      }
+      .reference {
+        opacity: 0.8;
+        font-style: oblique;
+        margin-bottom: 15px;
+        padding: 10px;
+        transition: transform 0.1s ease;
+        background-color: #ffffff;
+        border: 2px solid black;
+        border-left: 6px solid #007bff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        cursor:pointer;
+      }
+      .reference:hover {
+        opacity: 1;
+        transform: scale(1.02);
+      }
+      .reference-title {
+        font-weight: bold;
+        color: #0056b3;
+      }
+      .author,
+      .source {
+        color: #000000;
+      }
+      .Header {
+        background-color: #000e88;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        border: 2px solid black;
+      }
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+      a:hover {
+        color: black;
+        text-decoration: underline;
+      }
     </style>
-</head>
-<body>
-
-    <h1>Referencias Bibliográficas</h1>
-
-    <div class="reference">
-        <p class="reference-title">Aldowah, H., Al-Samarraie, H., & Fauzy, W. M. (2019). Educational data mining and learning analytics for 21st century higher education: A review and synthesis.</p>
-        <p class="author">Telematics and Informatics, 37, 13-49.</p>
-        <p class="source"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0736585318304234" target="_blank">Disponible en: sciencedirect.com</a></p>
+  </head>
+  <body>
+    <div class="Header">
+      <h1>Referencias Bibliográficas</h1>
     </div>
 
     <div class="reference">
-        <p class="reference-title">Amo Filvá, D., Prinsloo, P., Alier Forment, M., Fonseca Escudero, D., Torres Kompen, R., Canaleta Llampallas, X., & Herrero Martín, J. (2021). Local technology to enhance data privacy and security in educational technology.</p>
-        <p class="author">International Journal of Interactive Multimedia and Artificial Intelligence, 7(2), 262-273.</p>
-        <p class="source"><a href="https://upcommons.upc.edu/handle/2117/357943" target="_blank">Disponible en: upcommons.upc.edu</a></p>
+      <p class="reference-title">
+        Aldowah, H., Al-Samarraie, H., & Fauzy, W. M. (2019). Educational data
+        mining and learning analytics for 21st century higher education: A
+        review and synthesis.
+      </p>
+      <p class="author">Telematics and Informatics, 37, 13-49.</p>
+      <p class="source">
+        <a
+          href="https://www.sciencedirect.com/science/article/abs/pii/S0736585318304234"
+          target="_blank" 
+          rel="noopener"
+          >Disponible en: sciencedirect.com</a
+        >
+      </p>
     </div>
 
     <div class="reference">
-        <p class="reference-title">Bohórquez, P., & Ricardo, D. (2020). Diseño de software de gestión académica para la Escuela Gabriel García Moreno.</p>
-        <p class="author">Instituto Superior Tecnológico Bolivariano de Tecnología.</p>
-        <p class="source"><a href="https://dspace.itb.edu.ec/handle/123456789/2183" target="_blank">Disponible en: dspace.itb.edu.ec</a></p>
+      <p class="reference-title">
+        Amo Filvá, D., Prinsloo, P., Alier Forment, M., Fonseca Escudero, D.,
+        Torres Kompen, R., Canaleta Llampallas, X., & Herrero Martín, J. (2021).
+        Local technology to enhance data privacy and security in educational
+        technology.
+      </p>
+      <p class="author">
+        International Journal of Interactive Multimedia and Artificial
+        Intelligence, 7(2), 262-273.
+      </p>
+      <p class="source">
+        <a href="https://upcommons.upc.edu/handle/2117/357943" target="_blank" 
+          rel="noopener"
+          >Disponible en: upcommons.upc.edu</a
+        >
+      </p>
     </div>
 
     <div class="reference">
-        <p class="reference-title">Chen, L., Chen, P., & Lin, Z. (2020). Artificial intelligence in education: A review.</p>
-        <p class="author">IEEE Access, 8, 75264-75278.</p>
-        <p class="source"><a href="https://ieeexplore.ieee.org/abstract/document/9069875" target="_blank">Disponible en: ieeexplore.ieee.org</a></p>
+      <p class="reference-title">
+        Bohórquez, P., & Ricardo, D. (2020). Diseño de software de gestión
+        académica para la Escuela Gabriel García Moreno.
+      </p>
+      <p class="author">
+        Instituto Superior Tecnológico Bolivariano de Tecnología.
+      </p>
+      <p class="source">
+        <a
+          href="https://dspace.itb.edu.ec/handle/123456789/2183"
+          target="_blank" 
+          rel="noopener"
+          >Disponible en: dspace.itb.edu.ec</a
+        >
+      </p>
     </div>
 
     <div class="reference">
-        <p class="reference-title">Chinchin Ponce, J. A., & Landeta Tapia, A. J. (2023). Desarrollo de una aplicación web para la automatización de matrículas y notas en el Centro de Desarrollo Infantil Cumbre de la Ciudad de Quito aplicando prácticas ágiles.</p>
-        <p class="author">Universidad Técnica de Cotopaxi.</p>
-        <p class="source"><a href="https://repositorio.utc.edu.ec/items/3e297837-5529-4410-9047-a15c8a6add90" target="_blank">Disponible en: repositorio.utc.edu.ec</a></p>
+      <p class="reference-title">
+        Chen, L., Chen, P., & Lin, Z. (2020). Artificial intelligence in
+        education: A review.
+      </p>
+      <p class="author">IEEE Access, 8, 75264-75278.</p>
+      <p class="source">
+        <a
+          href="https://ieeexplore.ieee.org/abstract/document/9069875"
+          target="_blank" 
+          rel="noopener"
+          >Disponible en: ieeexplore.ieee.org</a
+        >
+      </p>
     </div>
 
     <div class="reference">
-        <p class="reference-title">Diaz-Ordoñez, M., Rodríguez Baena, D. S., & Yun-Casalilla, B. (2023). A new approach for the construction of historical databases—NoSQL Document-oriented databases: the example of AtlantoCracies.</p>
-        <p class="author">Digital Scholarship in the Humanities, 38(3), 1014-1032.</p>
-        <p class="source"><a href="https://academic.oup.com/dsh/article/38/3/1014/7136726" target="_blank">Disponible en: academic.oup.com</a></p>
+      <p class="reference-title">
+        Chinchin Ponce, J. A., & Landeta Tapia, A. J. (2023). Desarrollo de una
+        aplicación web para la automatización de matrículas y notas en el Centro
+        de Desarrollo Infantil Cumbre de la Ciudad de Quito aplicando prácticas
+        ágiles.
+      </p>
+      <p class="author">Universidad Técnica de Cotopaxi.</p>
+      <p class="source">
+        <a
+          href="https://repositorio.utc.edu.ec/items/3e297837-5529-4410-9047-a15c8a6add90"
+          target="_blank" 
+          rel="noopener"
+          >Disponible en: repositorio.utc.edu.ec</a
+        >
+      </p>
     </div>
 
     <div class="reference">
-        <p class="reference-title">Figueroa Dumes, H. A., & Macias Armendariz, E. G. (2020). Desarrollo de un sistema web de control académico para registro de asistencia y gestión de notas de la Escuela Amado Eulogio Bazan Ruiz.</p>
-        <p class="author">Universidad Estatal de Milagro.</p>
-        <p class="source"><a href="https://repositorio.unemi.edu.ec/handle/123456789/5135" target="_blank">Disponible en: repositorio.unemi.edu.ec</a></p>
+      <p class="reference-title">
+        Diaz-Ordoñez, M., Rodríguez Baena, D. S., & Yun-Casalilla, B. (2023). A
+        new approach for the construction of historical databases—NoSQL
+        Document-oriented databases: the example of AtlantoCracies.
+      </p>
+      <p class="author">
+        Digital Scholarship in the Humanities, 38(3), 1014-1032.
+      </p>
+      <p class="source">
+        <a
+          href="https://academic.oup.com/dsh/article/38/3/1014/7136726"
+          target="_blank" 
+          rel="noopener"
+          >Disponible en: academic.oup.com</a
+        >
+      </p>
     </div>
 
     <div class="reference">
-        <p class="reference-title">Mistretta, S. (Ed.). (2024). Reimagining Education: The Role of E-Learning, Creativity, and Technology in the Post-Pandemic Era.</p>
-        <p class="author">BoD–Books on Demand.</p>
-        <p class="source"><a href="https://books.google.es/books?hl=es&lr=&id=WTL-EAAAQBAJ&oi=fnd&pg=PR11&dq=The+Role+of+E-Learning+Tools+in+the+Post-Pandemic+Education+Landscape" target="_blank">Disponible en: books.google.es</a></p>
+      <p class="reference-title">
+        Figueroa Dumes, H. A., & Macias Armendariz, E. G. (2020). Desarrollo de
+        un sistema web de control académico para registro de asistencia y
+        gestión de notas de la Escuela Amado Eulogio Bazan Ruiz.
+      </p>
+      <p class="author">Universidad Estatal de Milagro.</p>
+      <p class="source">
+        <a
+          href="https://repositorio.unemi.edu.ec/handle/123456789/5135"
+          target="_blank" 
+          rel="noopener"
+          >Disponible en: repositorio.unemi.edu.ec</a
+        >
+      </p>
     </div>
 
     <div class="reference">
-        <p class="reference-title">Santally, M. I., Rajabalee, Y. B., Sungkur, R. K., Maudarbocus, M. I., & Greller, W. (2020). Enabling continuous improvement in online teaching and learning through e-learning capability and maturity assessment.</p>
-        <p class="author">Business Process Management Journal, 26(6), 1687-1707.</p>
-        <p class="source"><a href="https://www.emerald.com/insight/content/doi/10.1108/BPMJ-11-2018-0335/full/html" target="_blank">Disponible en: emerald.com</a></p>
+      <p class="reference-title">
+        Mistretta, S. (Ed.). (2024). Reimagining Education: The Role of
+        E-Learning, Creativity, and Technology in the Post-Pandemic Era.
+      </p>
+      <p class="author">BoD–Books on Demand.</p>
+      <p class="source">
+        <a
+          href="https://books.google.es/books?hl=es&lr=&id=WTL-EAAAQBAJ&oi=fnd&pg=PR11&dq=The+Role+of+E-Learning+Tools+in+the+Post-Pandemic+Education+Landscape"
+          target="_blank" 
+          rel="noopener"
+          >Disponible en: books.google.es</a
+        >
+      </p>
     </div>
 
     <div class="reference">
-        <p class="reference-title">Zurita Lara, B. N. (2020). Sistema web para la gestión académica y administrativa de empresa de capacitación profesional DIENAV.</p>
-        <p class="author">Universidad Tecnológica Israel.</p>
-        <p class="source"><a href="https://repositorio.uisrael.edu.ec/xmlui/handle/47000/2489" target="_blank">Disponible en: repositorio.uisrael.edu.ec</a></p>
+      <p class="reference-title">
+        Santally, M. I., Rajabalee, Y. B., Sungkur, R. K., Maudarbocus, M. I., &
+        Greller, W. (2020). Enabling continuous improvement in online teaching
+        and learning through e-learning capability and maturity assessment.
+      </p>
+      <p class="author">
+        Business Process Management Journal, 26(6), 1687-1707.
+      </p>
+      <p class="source">
+        <a
+          href="https://www.emerald.com/insight/content/doi/10.1108/BPMJ-11-2018-0335/full/html"
+          target="_blank" 
+            rel="noopener"
+          >Disponible en: emerald.com</a
+        >
+      </p>
     </div>
 
-</body>
+    <div class="reference">
+      <p class="reference-title">
+        Zurita Lara, B. N. (2020). Sistema web para la gestión académica y
+        administrativa de empresa de capacitación profesional DIENAV.
+      </p>
+      <p class="author">Universidad Tecnológica Israel.</p>
+      <p class="source">
+        <a
+          href="https://repositorio.uisrael.edu.ec/xmlui/handle/47000/2489"
+          target="_blank" 
+          rel="noopener"
+          >Disponible en: repositorio.uisrael.edu.ec</a
+        >
+      </p>
+    </div>
+  </body>
 </html>
