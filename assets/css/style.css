@@ -13,7 +13,7 @@
 
 /*-----------------------------------*\
   #CUSTOM PROPERTY
-\*-----------------------------------*/
+\*-----------------------------------*/ 
 
 :root {
 
@@ -428,6 +428,124 @@ main {
 }
 
 .contact-info address { font-style: normal; }
+
+.contactsection { margin-top: 35px;  margin-bottom: 35px; }
+
+.contactsection-title { margin-bottom: 30px; }
+
+.contactsection-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.contactsection-item {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-2);
+  margin-bottom: 18px;
+  margin-top: 18px;
+  z-index: 1;
+}
+
+.contactsection-item::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+}
+ 
+.contactsection-icon-box { margin-bottom: 10px; }
+
+.contactsection-icon-box img { margin: auto; }
+
+.contactsection-content-box { text-align: center; }
+
+.contactsection-item-title { margin-bottom: 25px; }
+
+.contactsection-item-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-3);
+  line-height: 1.6;
+}
+
+.contactsectioncontent-listemail {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
+}
+
+.contactsectioncontent-listsocialmedia {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
+}
+
+.contactsectioncontent-listacademicmedia {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
+}
+
+.contactsectioncontent-listresearch {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
+}
+
+.resume-compliteracy-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+
+.resume-proglang-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+
+.resume-languages-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+
+.contactsectioncontent-item {
+  min-width: 100%;
+  display: flex;
+  align-items: left;
+  gap: 10px;
+}
+
+.contactsectioncontent-info {
+  max-width: 100%;
+  width: 100%;
+  text-align: left;
+}
+
+.contactsectioncontent-title {
+  color: var(--light-gray-70);
+  font-size: var(--fs-8);
+  margin-bottom: 2px;
+  margin-left: 0px;
+  text-align: left;
+}
+
+.contactsectioncontent-info :is(.contactsectioncontent-link, time, address) {
+  color: var(--white-2);
+  font-size: var(--fs-8);
+  margin-bottom: 20px;
+  margin-left: 0px;
+  text-align: left;
+}
+
+.contactsectioncontent-info address { font-style: normal; }
 
 .social-list {
   display: flex;
@@ -847,7 +965,7 @@ main {
   gap: 5px;
   margin-bottom: 8px;
 }
-
+ 
 .skill .title-wrapper data {
   color: var(--light-gray);
   font-size: var(--fs-7);
@@ -856,7 +974,7 @@ main {
 
 .skill-progress-bg {
   background: var(--jet);
-  width: 100%;
+  width: 90%;
   height: 8px;
   border-radius: 10px;
 }
