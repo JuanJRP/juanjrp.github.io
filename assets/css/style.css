@@ -1365,6 +1365,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     margin-bottom: 10px;
   }
 
+  .sidebar.active { max-height: 410px; }
   /**
    * #PORTFOLIO, BLOG 
    */
