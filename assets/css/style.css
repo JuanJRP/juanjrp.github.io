@@ -1233,15 +1233,19 @@ textarea.form-input::-webkit-resizer { display: none; }
  * responsive larger than 450px screen
  */
 
-@media (min-width: 450px) {
+@media (min-width: 400px) {
 
   /**
    * client
    */
+  
 
   .clients-item { min-width: calc(33.33% - 10px); }
 
-
+  .sidebar {
+    max-height: 135px;
+    margin-bottom: 10px;
+  }
 
   /**
    * #PORTFOLIO, BLOG 
