@@ -1658,23 +1658,28 @@ textarea.form-input::-webkit-resizer { display: none; }
   .clients-item { min-width: calc(33.33% - 10px); }
 
   .sidebar {
-    max-height: 135px;
+    max-height: 140px;
     margin-bottom: 10px;
   }
 
-  .sidebar.active { max-height: 410px; }
+  .sidebar.active { max-height: 510px; }
   /**
    * #PORTFOLIO, BLOG 
    */
 
   .project-img,
   .blog-banner-box { height: auto; }
+  
+  .navbar-list {
+    padding: 0 5px;
+  }
+
+  .navbar-link {
+    font-size: 20px;
+    padding: 15px 30px;
+  }
 
 }
-
-
-
-
 
 /**
  * responsive larger than 580px screen
