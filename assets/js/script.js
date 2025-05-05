@@ -127,7 +127,7 @@ window.addEventListener("load", function() {
   
   // Show the first page (About)
   for (let i = 0; i < pages.length; i++) {
-    if (pages[i].dataset.page === "acerca") {
+    if (pages[i].dataset.page === "acerca" || pages[i].dataset.page === "about") {
       pages[i].classList.add("active");
     } else {
       pages[i].classList.remove("active");
