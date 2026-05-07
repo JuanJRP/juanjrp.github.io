@@ -1,1037 +1,454 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juan Restrepo - Website</title>
-
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/logo-ps.png" type="image/x-icon">
-
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
+  <title>Juan José Restrepo — Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
-
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
 <body>
+<!-- Loading Screen -->
+  <div id="loading">
+    <div class="loading-name">JJR</div>
+    <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
+  </div>
 
-  <!--
-    - #MAIN
-  -->
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
 
-  <main>
+  <!-- Canvas Background -->
+  <canvas id="canvas-bg"></canvas>
 
-    <!--
-      - #SIDEBAR
-    -->
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <span class="toast-icon">✅</span>
+    <span>¡Mensaje enviado con éxito!</span>
+  </div>
 
+  <div class="layout">
+
+    <!-- ===== SIDEBAR ===== -->
     <aside class="sidebar" data-sidebar>
+      <div class="profile">
+        <div class="avatar-wrap">
+          <div class="avatar-ring"></div>
+          <div class="avatar-placeholder">JJ</div>
+        </div>
+        <h1 class="profile-name">Juan José<br>Restrepo Pabón</h1>
+        <span class="profile-role">Software Engineer</span>
+      </div>
 
-      <div class="sidebar-info">
+      <button class="sidebar-toggle" id="sidebarToggle" data-sidebar-btn>
+        <span>Mostrar Contacto</span>
+        <span>▾</span>
+      </button>
 
-        <figure class="avatar-box">
-          <img src="./assets/images/photo-preview.png" alt="Juan Jose Restrepo Pabon" width="80">
-        </figure>
+      <div class="sidebar-extra" id="sidebarExtra">
+        <ul class="contact-list">
+          <li>
+            <div class="contact-icon">✉</div>
+            <div>
+              <p class="contact-label">Correo</p>
+              <p class="contact-value"><a href="mailto:juanjoserestrepopabon@gmail.com">juanjoserestrepopabon@gmail.com</a></p>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">📱</div>
+            <div>
+              <p class="contact-label">Teléfono</p>
+              <p class="contact-value"><a href="tel:+573002569507">+57 (300) 256-9507</a></p>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">📅</div>
+            <div>
+              <p class="contact-label">Nacimiento</p>
+              <p class="contact-value">Mayo 22, 2003</p>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">📍</div>
+            <div>
+              <p class="contact-label">Ubicación</p>
+              <p class="contact-value">Itagüí, Antioquia, Colombia</p>
+            </div>
+          </li>
+        </ul>
 
-        <div class="info-content">
-          <h1 class="name" title="Juan Jose" style="font-size:25px;margin-bottom:0.01cm;">Juan Jose</h1>
-          <h1 class="name" title="Restrepo Pabon" style="font-size:25px;">Restrepo Pabon</h1>
-
-          <p class="title">Ingeniero de Software</p>
+        <div class="social-section">
+          <p class="social-label">Redes</p>
+          <div class="social-links">
+            <a href="https://github.com/JuanJRP" target="_blank" class="social-link" title="GitHub">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/juan.jose_22" target="_blank" class="social-link" title="Instagram">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/juanjose.restrepo.3323" target="_blank" class="social-link" title="Facebook">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://juanjrp.github.io/" target="_blank" class="social-link" title="Portfolio">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0L1.5 6v12L12 24l10.5-6V6L12 0zm-1 17.5v-11l8.5 4.5-8.5 6.5z"/></svg>
+            </a>
+          </div>
         </div>
 
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Mostrar Contacto</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
+        <div class="lang-switch">
+          <a href="#" class="lang-btn active">ES</a>
+          <a href="./assets/Pages/en/index.html" class="lang-btn">EN</a>
+        </div>
       </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Correo</p>
-
-              <a href="mailto:juanjoserestrepopabon@gmail.com" class="contact-link">juanjoserestrepopabon@gmail.com</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Telefono</p>
-
-              <a href="tel:+573002569507" class="contact-link">+57 (300) 256-9507</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Cumpleaños</p>
-
-              <time datetime="2003-05-22">Mayo 22, 2003</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Ubicacion</p>
-
-              <address>Itagüi, Antioquia, Colombia</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-          
-          <li class="social-item">
-            <a href="https://github.com/JuanJRP" target="_blank" class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li> 
-          
-          ali class="social-item">
-            <a href="https://www.instagram.com/juan.jose_22?igsh=ZGhkN2ZjNnB0YWNk" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.facebook.com/juanjose.restrepo.3323?mibextid=ZbWKwL" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://x.com/juanjose52446" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-        <!-- <div class="separator"></div>-->
-        
-        <ul class="social-list">
-          <p class="contact-title" style="margin-top:0.5cm;">IDIOMA: </p> 
-          <a class="contact-title" style="margin-top:0.5cm;" href="../index.html"> ES </a>
-          <a class="contact-title" style="margin-top:0.5cm;" href="./assets/Pages/en/index.html"> EN </a>
-        </ul>
-
-      </div>
-
     </aside>
 
-    <!--
-      - #main-content
-    -->
-
+    <!-- ===== MAIN ===== -->
     <div class="main-content">
 
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>Acerca</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Educacion</button>
-          </li>
-            
-          <!--<li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portafolio</button>
-          </li>-->
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contacto</button>
-          </li>
-
-        </ul>
-
+      <!-- Navbar -->
+      <nav class="navbar" id="navbar">
+        <button class="nav-btn active" data-nav-link data-page-target="acerca">Acerca</button>
+        <button class="nav-btn" data-nav-link data-page-target="educacion">Educación</button>
+        <button class="nav-btn" data-nav-link data-page-target="contacto">Contacto</button>
       </nav>
 
-      <!--
-        - #ABOUT
-      -->
+      <!-- ===== ABOUT PAGE ===== -->
+      <article class="page active" data-page="acerca">
 
-      <article class="about  active" data-page="acerca">
-
-        <header>
-          <h2 class="h2 article-title">Acerca De Mi</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            Soy ingeniero de software originario de Itagüí, Antioquia (Colombia), actualmente cursando el decimo semestre de Ingeniería de Software. Apasionado por la tecnología y el aprendizaje constante, estoy iniciando mi carrera profesional con un fuerte interés en el desarrollo de software y la creación de soluciones innovadoras.
+        <div class="hero-block reveal">
+          <p class="hero-greeting">// Hola, soy</p>
+          <h2 class="hero-title">Juan José <span class="highlight">Restrepo Pabón</span></h2>
+          <p class="hero-text">
+            Ingeniero de Software próximo a graduarse con experiencia en desarrollo full stack, arquitectura de datos y transformación
+            digital en entornos corporativos. Oriundo de Itagüí, Antioquia, Colombia.
           </p>
-
-          <p>
-            Cuento con sólidos conocimientos en lenguajes y frameworks de programación, así como una gran motivación por aplicar mis habilidades en proyectos reales que generen un impacto positivo en las personas y las organizaciones.
+          <p class="hero-text">
+            He diseñado e implementado soluciones tecnológicas orientadas a la optimización de procesos, integrando desarrollo web,
+            cloud computing y gestión de datos. Me caracterizo por ser autodidacta, con pasión por dominar las nuevas tecnologías y construir soluciones impactantes.
           </p>
+        </div>
 
-          <p>
-            Cuento con sólidos conocimientos en lenguajes y frameworks de programación, así como una gran motivación por aplicar mis habilidades en proyectos reales que generen un impacto positivo en las personas y las organizaciones.
-          </p>
-
-          <p>
-            Me caracterizo por ser autodidacta, analítico y orientado a la resolución de problemas, con una marcada disposición para trabajar en entornos colaborativos y aprender de la experiencia de otros profesionales.
-          </p>
-
-          <p>
-            Mi objetivo es contribuir al desarrollo de soluciones tecnológicas eficientes y centradas en el usuario, impulsando la innovación y el crecimiento continuo dentro del sector tecnológico.
-          </p>
-        </section>
-
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">En qué trabajo</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/icons/icon-dev.svg
-                " alt="design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Desarrollo backend</h4>
-
-                <p class="service-item-text">
-                  Desarrollo de aplicaciones backend utilizando Node.js y Express.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/icons/icon-web.svg" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Desarrollo web</h4>
-
-                <p class="service-item-text">
-                  Desarrollo de sitios de alta calidad a nivel profesional.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/icons/icon-app.svg" alt="mobile app icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Aplicaciones móviles</h4>
-
-                <p class="service-item-text">
-                  Desarrollo profesional de aplicaciones para iOS y Android.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/icons/icon-design.svg" alt="camera icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Arquitectura de sistemas</h4>
-
-                <p class="service-item-text">
-                  Diseño y desarrollo de sistemas escalables y eficientes.
-                </p>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="educacion">
-
-        <header>
-          <h2 class="h2 article-title">Educación</h2>
-        </header>
-
-        <div class="download-cv-box">
-          <div class="download-cv">
-            <p class="title"> <a href="./assets/docs/es/CV_Juan_Jose_Restrepo_Pabon.pdf" target="_blank" class="title"><img src="./assets/icons/icon-pdf.png" alt="pdf icon" width="50px" class="icon"></br>Descargar CV completo</a></p>
+        <div class="stats-row">
+          <div class="stat-card reveal">
+            <span class="stat-number">4+</span>
+            <span class="stat-label">Años estudiando</span>
+          </div>
+          <div class="stat-card reveal">
+            <span class="stat-number">2+</span>
+            <span class="stat-label">Años de experiencia</span>
+          </div>
+          <div class="stat-card reveal">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Proyectos destacados</span>
+          </div>
+          <div class="stat-card reveal">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Tecnologías</span>
           </div>
         </div>
-        </br>
 
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+        <div style="margin-bottom:24px;">
+          <div class="section-header reveal">
+            <span class="section-tag">// servicios</span>
+            <h3 class="section-title">En qué trabajo</h3>
+            <div class="section-line"></div>
+          </div>
+          <div class="services-grid">
+            <div class="service-card reveal">
+              <span class="service-icon">⚙️</span>
+              <h4 class="service-name">Desarrollo Backend</h4>
+              <p class="service-desc">APIs robustas y escalables con Node.js, Express y arquitectura de microservicios.</p>
             </div>
+            <div class="service-card reveal">
+              <span class="service-icon">🌐</span>
+              <h4 class="service-name">Desarrollo Web</h4>
+              <p class="service-desc">Aplicaciones modernas con React, Next.js y TypeScript. UI/UX enfocado en el usuario.</p>
+            </div>
+            <div class="service-card reveal">
+              <span class="service-icon">☁️</span>
+              <h4 class="service-name">Cloud & DevOps</h4>
+              <p class="service-desc">Despliegue en AWS, automatización de procesos y gestión de infraestructura cloud.</p>
+            </div>
+            <div class="service-card reveal">
+              <span class="service-icon">🗄️</span>
+              <h4 class="service-name">Arquitectura de Datos</h4>
+              <p class="service-desc">Diseño de bases de datos, ETL pipelines y soluciones con BigQuery y Redshift.</p>
+            </div>
+          </div>
+        </div>
 
-            <h3 class="h3">Educación</h3>
+        <div class="skills-block reveal">
+          <div class="section-header" style="margin-bottom:24px;">
+            <span class="section-tag">// stack</span>
+            <h3 class="section-title">Habilidades Técnicas</h3>
+            <div class="section-line"></div>
           </div>
 
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Institución Universitaria Pascual Bravo</h4>
-
-              <span>2021 — Actual</span>
-
-              <p class="timeline-text">
-                Actualmente cursando el programa de Ingeniería de Software, donde estoy adquiriendo sólidos conocimientos en desarrollo de aplicaciones, arquitectura de software, bases de datos, metodologías ágiles y gestión de proyectos tecnológicos. La formación incluye laboratorios prácticos y proyectos reales que me permiten aplicar conceptos teóricos en entornos similares al campo laboral. He participado en diversos proyectos colaborativos que han fortalecido mis habilidades de trabajo en equipo y resolución de problemas complejos de programación.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Servicio Nacional De Aprendizaje SENA</h4>
-
-              <span>2019 — 2020</span>
-
-              <p class="timeline-text">
-                Completé una formación técnica especializada en el diseño y fabricación de productos artesanales en cuero. El programa incluyó capacitación en selección y tratamiento de materiales, técnicas tradicionales y contemporáneas de marroquinería, diseño de patrones, corte, costura, acabados y control de calidad. Desarrollé habilidades manuales precisas y conocimientos sobre la cadena productiva del cuero, desde su obtención hasta la comercialización del producto final. Como parte de la formación, realicé prácticas profesionales donde pude aplicar las técnicas aprendidas en un entorno real de producción.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Institución Educativa María Josefa Escobar</h4>
-
-              <span>2009 — 2020</span>
-
-              <p class="timeline-text">
-                Cursé mis estudios básicos y medios en esta institución, donde recibí una formación integral orientada al desarrollo de competencias académicas y valores humanos. Durante este periodo, adquirí conocimientos fundamentales en ciencias básicas, humanidades, matemáticas y tecnología. Participé activamente en proyectos escolares, actividades culturales y deportivas que complementaron mi formación académica. La institución fomentó el pensamiento crítico, la responsabilidad social y las habilidades comunicativas como pilares de mi desarrollo personal y académico.
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+          <div class="skills-category">
+            <p class="skills-cat-label">Lenguajes</p>
+            <div class="skills-tags">
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">SQL</span>
             </div>
-
-            <h3 class="h3">Experiencia</h3>
           </div>
 
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Alimentos Cárnicos S.A.S - Grupo Nutresa</h4>
-
-              <span>7/2024 - 6/01/2026</span>
-
-              <p class="timeline-text">
-                Durante mi periodo de prácticas en Alimentos Cárnicos S.A.S, me desempeñé como desarrollador Full Stack y arquitecto de datos, participando activamente en el diseño, desarrollo y mantenimiento de soluciones tecnológicas para la empresa. Mis principales responsabilidades incluyeron:
-              </p>
-
-              <p class="timeline-text">
-                • Desarrollo Full Stack de aplicaciones internas orientadas a la optimización de procesos operativos y administrativos.
-              </p>
-
-              <p class="timeline-text">
-                • Diseño de arquitectura de datos, garantizando escalabilidad, integridad y disponibilidad de la información.
-              </p>
-
-              <p class="timeline-text">
-                • Creación, administración y optimización de bases de datos en la nube.
-              </p>
-
-              <p class="timeline-text">
-                • Gestión y configuración de servidores en entornos cloud para el despliegue de aplicaciones y servicios.
-              </p>
-
-              <p class="timeline-text">
-                • Automatización de procesos empresariales mediante el desarrollo de scripts y herramientas digitales, reduciendo tiempos operativos y errores manuales.
-              </p>
-
-              <p class="timeline-text">
-                • Integración de sistemas y servicios para mejorar el flujo de información entre diferentes áreas de la empresa.
-              </p>
-
-              <p class="timeline-text">
-                • Soporte técnico y mejora continua de las soluciones implementadas, atendiendo requerimientos internos.
-              </p>
-
-              <p class="timeline-text">
-                Esta experiencia fortaleció mis habilidades técnicas en desarrollo de software, bases de datos, computación en la nube y automatización de procesos, además de permitirme comprender el uso estratégico de la tecnología en el sector cárnico.
-              </p>
-            
-            </li>
-            
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">V V TECHNOLOGY SAS</h4>
-
-              <span>12/2024 - 2/2025</span>
-
-              <p class="timeline-text">
-                Durante mi periodo en V V TECHNOLOGY SAS, me desempeñé como vendedor de productos y soluciones tecnológicas. Mis responsabilidades principales incluyeron:
-              </p>
-              <p class="timeline-text">
-                • Atención directa a clientes en punto de venta, brindando asesoría sobre productos tecnológicos y sus características.
-              </p>
-              <p class="timeline-text">
-                • Demostración práctica de equipos y dispositivos a clientes potenciales, explicando sus funcionalidades y beneficios.
-              </p>
-              <p class="timeline-text">
-                • Concreción de ventas y procesamiento de transacciones comerciales.
-              </p>
-              <p class="timeline-text">
-                • Manejo de inventario básico y registro de productos vendidos.
-              </p>
-              <p class="timeline-text">
-                • Seguimiento a clientes después de la venta para asegurar su satisfacción con los productos adquiridos.
-              </p>
-              <p class="timeline-text">
-                • Cumplimiento de metas de ventas mensuales establecidas por la empresa.
-              </p>
-              <p class="timeline-text">
-                • Participación en capacitaciones sobre nuevos productos para mantenerme actualizado sobre las ofertas de la compañía.
-              </p>
-              <p class="timeline-text">
-                Esta experiencia me permitió desarrollar habilidades importantes en atención al cliente, técnicas de venta y conocimiento técnico sobre productos tecnológicos del mercado actual.
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-          
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="chatbubbles-outline"></ion-icon>
+          <div class="skills-category">
+            <p class="skills-cat-label">Frameworks & Librerías</p>
+            <div class="skills-tags">
+              <span class="skill-tag">Next.js</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Express</span>
             </div>
-            <h3 class="h3">Idiomas</h3>
           </div>
-          <ol class="timeline-list">
 
-            <li class="timeline-item">
+          <div class="skills-category">
+            <p class="skills-cat-label">Bases de Datos</p>
+            <div class="skills-tags">
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">SQL Server</span>
+              <span class="skill-tag">BigQuery</span>
+              <span class="skill-tag">Redshift</span>
+            </div>
+          </div>
 
-              <h4 class="h4 timeline-item-title">Español</h4>
-              <p class="timeline-text">
-                Idioma nativo
-              </p>
-
-            </li>
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Inglés</h4>
-              <p class="timeline-text">
-                Competencia B2 - Segundo idioma
-              </p>
-              
-            </li>
-            
-          </ol>
-        </section>
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">Habilidades</h3>
-
-          <ul class="contactsection-list">
-
-            <li class="contactsection-item">
-  
-              <div class="contactsection-icon-box">
-                <img src="./assets/icons/icon-computer.png" alt="proglang icon" width="40">
-              </div>
-  
-              <div class="contactsection-content-box">
-                <h4 class="h4 contactsection-item-title">Lenguajes de Programación</h4>
-                <ul class="resume-proglang-list">
-  
-                  <li class="contactsectioncontent-item">
-        
-                    <div class="icon-box">
-                      <img src="./assets/icons/icon-python.ico" alt="python icon" width="80%">
-                     
-                    </div>
-        
-                    <div class="contactsectioncontent-info">
-                      <a class="contactsectioncontent-title"></br></a>
-                      <a class="contactsectioncontent-link">Python</a>
-                    </div>
-        
-                  </li>
-
-                  <li class="contactsectioncontent-item">
-        
-                    <div class="icon-box">
-                      <img src="./assets/icons/icon-cs.ico" alt="cs icon" width="80%">
-                     
-                    </div>
-        
-                    <div class="contactsectioncontent-info">
-                      <a class="contactsectioncontent-title"></br> </a>
-                      <a class="contactsectioncontent-link">C#</a>
-                    </div>
-        
-                  </li>
-        
-                </ul>
-              </div>
-  
-            </li>
-          </ul>
-
-          <p style="margin-top:-0.5cm;"> </p> 
-
-          <ul class="contactsection-list">
-
-            <li class="contactsection-item">
-  
-              <div class="contactsection-icon-box">
-                <img src="./assets/icons/icon-tools.png" alt="tools icon" width="40">
-              </div>
-  
-              <div class="contactsection-content-box">
-                <h4 class="h4 contactsection-item-title">Herramientas y Software</h4>
-                <ul class="resume-proglang-list">
-  
-                  <li class="contactsectioncontent-item">
-        
-                    <div class="icon-box">
-                      <img src="./assets/icons/icon-numpy.svg" alt="julia icon" width="80%">
-                     
-                    </div>
-        
-                    <div class="contactsectioncontent-info">
-                      <a class="contactsectioncontent-title"></br> </a>
-                      <a class="contactsectioncontent-link">Numpy</a>
-                    </div>
-        
-                  </li>
-
-                  <li class="contactsectioncontent-item">
-        
-                    <div class="icon-box">
-                      <img src="./assets/icons/icon-pandas.svg" alt="python icon" width="80%">
-                     
-                    </div>
-        
-                    <div class="contactsectioncontent-info">
-                      <a class="contactsectioncontent-title"></br> </a>
-                      <a class="contactsectioncontent-link">Pandas</a>
-                    </div>
-        
-                  </li>
-
-                  <li class="contactsectioncontent-item">
-        
-                    <div class="icon-box">
-                      <img src="./assets/icons/icon-scikit_learn.svg" alt="rstats icon" width="80%">
-                     
-                    </div>
-        
-                    <div class="contactsectioncontent-info">
-                      <a class="contactsectioncontent-title"></br> </a>
-                      <a class="contactsectioncontent-link">Scikit Learn</a>
-                    </div>
-        
-                  </li>
-
-                  <li class="contactsectioncontent-item">
-        
-                    <div class="icon-box">
-                      <img src="./assets/icons/icon-vscode.ico" alt="code icon" width="80%">
-                     
-                    </div>
-        
-                    <div class="contactsectioncontent-info">
-                      <a class="contactsectioncontent-title"></br> </a>
-                      <a class="contactsectioncontent-link">VS Code</a>
-                    </div>
-        
-                  </li>
-
-                  <li class="contactsectioncontent-item">
-        
-                    <div class="icon-box">
-                      <img src="./assets/icons/icon-github.svg" alt="git icon" width="80%">
-                     
-                    </div>
-        
-                    <div class="contactsectioncontent-info">
-                      <a class="contactsectioncontent-title"></br> </a>
-                      <a class="contactsectioncontent-link">Github</a>
-                    </div>
-        
-                  </li>
-        
-  
-                  <li class="contactsectioncontent-item">
-        
-                    <div class="icon-box">
-                      <img src="./assets/icons/icon-jupyter.svg" alt="stata icon" width="80%">
-                     
-                    </div>
-        
-                    <div class="contactsectioncontent-info">
-                      <a class="contactsectioncontent-title"></br> </a>
-                      <a class="contactsectioncontent-link">Jupyter</a>
-                    </div>
-        
-                  </li>
-
-                  <li class="contactsectioncontent-item">
-        
-                    <div class="icon-box">
-                      <img src="./assets/icons/icon-docker.png" alt="docker icon" width="80%">
-                     
-                    </div>
-        
-                    <div class="contactsectioncontent-info">
-                      <a class="contactsectioncontent-title"></br> </a>
-                      <a class="contactsectioncontent-link">Docker</a>
-                    </div>
-        
-                  </li>
-
-                </ul>
-              </div>
-  
-            </li>
-          </ul>
-
-
-          <ul class="skills-list content-card">
-
-            <ul class="skills-bar-list">
-
-              <li class="skills-item">
-
-                <div class="title-wrapper">
-                  <h5 class="h5">Trabajo en equipo</h5>
-                  <data value="90">90%</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 90%;"></div>
-                </div>
-
-              </li>
-
-              <li class="skills-item">
-
-                <div class="title-wrapper">
-                  <h5 class="h5">Liderazgo</h5>
-                  <data value="85">85%</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 85%;"></div>
-                </div>
-
-              </li>
-
-              <li class="skills-item">
-
-                <div class="title-wrapper">
-                  <h5 class="h5">Gestión del tiempo</h5>
-                  <data value="90">90%</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 90%;"></div>
-                </div>
-
-              </li>
-
-              <li class="skills-item">
-
-                <div class="title-wrapper">
-                  <h5 class="h5">Resolución de problemas</h5>
-                  <data value="95">95%</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 95%;"></div>
-                </div>
-
-              </li>
-            
-            </ul>
-
-          </ul>
-
-
-        </section>
+          <div class="skills-category">
+            <p class="skills-cat-label">Cloud & Herramientas</p>
+            <div class="skills-tags">
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">ESP32</span>
+            </div>
+          </div>
+        </div>
 
       </article>
 
-      <!--
-        - #PORTFOLIO
-      
+      <!-- ===== EDUCATION PAGE ===== -->
+      <article class="page" data-page="educacion">
 
-      <article class="portfolio" data-page="portafolio">
+        <div class="section-header reveal">
+          <span class="section-tag">// trayectoria</span>
+          <h3 class="section-title">Experiencia Laboral</h3>
+          <div class="section-line"></div>
+        </div>
 
-        <header>
-          <h2 class="h2 article-title">Portafolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <p class="timeline-period">Feb 2026 — Actualidad</p>
+            <h4 class="timeline-title">Analista de Transformación Digital</h4>
+            <p class="timeline-org">Nases Colombia – Alimentos Cárnicos, Grupo Nutresa</p>
+            <ul class="timeline-list">
+              <li>Diseño e implementación de soluciones tecnológicas para optimización de procesos internos.</li>
+              <li>Automatizaciones que redujeron tiempos operativos significativamente.</li>
+              <li>Gestión y optimización de estructuras de datos para mejorar disponibilidad e integridad.</li>
+              <li>Colaboración con áreas de negocio para identificar oportunidades de transformación digital.</li>
             </ul>
-
           </div>
 
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Finance</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Orizon</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Fundo</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Brawlhalla</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>-->
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contacto">
-
-        <header>
-          <h2 class="h2 article-title">Contacto</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53055.138597814585!2d-75.63740598535836!3d6.170114092317078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46822e075e9cd5%3A0x6dd21cc8445c3d42!2sItag%C3%BCi%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1746070408720!5m2!1ses!2sco" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </figure>
-        </section>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contacto</h3>
-
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Nombre Completo" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Correo" required data-form-input>
+          <div class="timeline-item reveal">
+            <p class="timeline-period">Jul 2025 — Ene 2026</p>
+            <h4 class="timeline-title">Analista de Transformación Digital (Practicante)</h4>
+            <p class="timeline-org">Alimentos Cárnicos S.A.S – Grupo Nutresa</p>
+            <ul class="timeline-list">
+              <li>Desarrollo de aplicaciones internas para la mejora de procesos empresariales.</li>
+              <li>Diseño de estructuras de bases de datos escalables.</li>
+              <li>Participación en configuración y despliegue de servicios en infraestructura cloud.</li>
+              <li>Soporte técnico y mantenimiento evolutivo a soluciones implementadas.</li>
+              <li>Colaboración en arquitectura de datos e integración entre sistemas.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item reveal">
+            <p class="timeline-period">Dic 2024 — Feb 2025</p>
+            <h4 class="timeline-title">Promotor de Tecnología</h4>
+            <p class="timeline-org">V V Technology SAS</p>
+            <ul class="timeline-list">
+              <li>Asesoría a clientes en selección de soluciones tecnológicas.</li>
+              <li>Demostraciones funcionales de dispositivos y equipos.</li>
+              <li>Gestión de procesos comerciales y cierre de ventas.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-header reveal">
+          <span class="section-tag">// proyectos</span>
+          <h3 class="section-title">Proyectos Destacados</h3>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card reveal">
+            <span class="project-emoji">🧹</span>
+            <h4 class="project-name">Plataforma de Reserva de Servicios de Limpieza</h4>
+            <p class="project-desc">Aplicación multiplataforma orientada a la contratación segura de servicios de limpieza con validación de identidad y seguimiento geolocalizado.</p>
+            <div class="project-tech">
+              <span class="tech-badge">AWS</span>
+              <span class="tech-badge">Geolocalización</span>
+              <span class="tech-badge">Cloud</span>
+              <span class="tech-badge">Identidad</span>
             </div>
+          </div>
 
-            <textarea name="message" class="form-input" placeholder="Tu Mensaje" required data-form-input></textarea>
+          <div class="project-card reveal">
+            <span class="project-emoji">🏥</span>
+            <h4 class="project-name">Sistema IoT de Monitoreo Médico</h4>
+            <p class="project-desc">Manilla médica inteligente con captura y transmisión de datos en tiempo real, monitoreo remoto y programación embebida.</p>
+            <div class="project-tech">
+              <span class="tech-badge">ESP32-C3</span>
+              <span class="tech-badge">IoT</span>
+              <span class="tech-badge">Sensores</span>
+              <span class="tech-badge">Embebido</span>
+            </div>
+          </div>
 
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Enviar Mensaje</span>
-            </button>
+          <div class="project-card reveal">
+            <span class="project-emoji">🤖</span>
+            <h4 class="project-name">Entrenamiento de Modelos LLM</h4>
+            <p class="project-desc">Proyecto de entrenamiento y ajuste fino de modelos conversacionales para productos colombianos con curación de datasets y fine-tuning.</p>
+            <div class="project-tech">
+              <span class="tech-badge">LLaMA</span>
+              <span class="tech-badge">LoRA</span>
+              <span class="tech-badge">Fine-tuning</span>
+              <span class="tech-badge">NLP</span>
+            </div>
+          </div>
+        </div>
 
-          </form>
+        <div class="section-header reveal">
+          <span class="section-tag">// académico</span>
+          <h3 class="section-title">Formación Académica</h3>
+          <div class="section-line"></div>
+        </div>
 
-        </section>
+        <div class="edu-grid reveal">
+          <div class="edu-card">
+            <span class="edu-icon">🎓</span>
+            <p class="edu-period">Feb 2021 — Actualidad</p>
+            <h4 class="edu-degree">Ingeniería de Software</h4>
+            <p class="edu-school">Institución Universitaria Pascual Bravo</p>
+          </div>
+          <div class="edu-card">
+            <span class="edu-icon">🪡</span>
+            <p class="edu-period">2009 — 2020</p>
+            <h4 class="edu-degree">Técnico en Elaboración Artesanal</h4>
+            <p class="edu-school">SENA — Servicio Nacional de Aprendizaje</p>
+          </div>
+          <div class="edu-card">
+            <span class="edu-icon">🏫</span>
+            <p class="edu-period">2009 — 2020</p>
+            <h4 class="edu-degree">Educación Primaria y Secundaria</h4>
+            <p class="edu-school">Institución Educativa María Josefa Escobar</p>
+          </div>
+        </div>
+
+        <div class="section-header reveal" style="margin-top:32px;">
+          <span class="section-tag">// fortalezas</span>
+          <h3 class="section-title">Fortalezas</h3>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="strengths-grid reveal">
+          <div class="strength-item"><span class="strength-dot"></span>Resolución de problemas</div>
+          <div class="strength-item"><span class="strength-dot"></span>Pensamiento analítico</div>
+          <div class="strength-item"><span class="strength-dot"></span>Aprendizaje autónomo</div>
+          <div class="strength-item"><span class="strength-dot"></span>Trabajo colaborativo</div>
+          <div class="strength-item"><span class="strength-dot"></span>Adaptabilidad tecnológica</div>
+          <div class="strength-item"><span class="strength-dot"></span>Comunicación técnica</div>
+        </div>
+
+      </article>
+
+      <!-- ===== CONTACT PAGE ===== -->
+      <article class="page" data-page="contacto">
+
+        <div class="section-header reveal">
+          <span class="section-tag">// contacto</span>
+          <h3 class="section-title">Hablemos</h3>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info-block reveal">
+            <h3 class="contact-intro">¿Tienes un proyecto?</h3>
+            <p class="contact-sub">Estoy disponible para oportunidades freelance, full-time o proyectos colaborativos. ¡Cuéntame tu idea!</p>
+
+            <ul class="contact-items">
+              <li class="c-item">
+                <div class="c-icon">✉</div>
+                <div>
+                  <p class="c-label">Email</p>
+                  <p class="c-value"><a href="mailto:juanjoserestrepopabon@gmail.com">juanjoserestrepopabon@gmail.com</a></p>
+                </div>
+              </li>
+              <li class="c-item">
+                <div class="c-icon">📱</div>
+                <div>
+                  <p class="c-label">Teléfono</p>
+                  <p class="c-value"><a href="tel:+573002569507">+57 (300) 256-9507</a></p>
+                </div>
+              </li>
+              <li class="c-item">
+                <div class="c-icon">💻</div>
+                <div>
+                  <p class="c-label">GitHub</p>
+                  <p class="c-value"><a href="https://github.com/JuanJRP" target="_blank">github.com/JuanJRP</a></p>
+                </div>
+              </li>
+              <li class="c-item">
+                <div class="c-icon">📍</div>
+                <div>
+                  <p class="c-label">Ubicación</p>
+                  <p class="c-value">Itagüí, Antioquia, Colombia</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="map-wrap">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53055.138597814585!2d-75.63740598535836!3d6.170114092317078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46822e075e9cd5%3A0x6dd21cc8445c3d42!2sItag%C3%BCi%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1746070408720!5m2!1ses!2sco" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+          <div class="contact-form-block reveal">
+            <h3 class="contact-intro">Envíame un mensaje</h3>
+            <p class="contact-sub">Respondo en menos de 24 horas.</p>
+
+            <form id="contactForm" data-form>
+              <div class="form-group">
+                <label class="form-label" for="fullname">Nombre Completo</label>
+                <input type="text" id="fullname" name="fullname" class="form-input" placeholder="Tu nombre..." required data-form-input>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="tu@email.com" required data-form-input>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="message">Mensaje</label>
+                <textarea id="message" name="message" class="form-input" placeholder="Cuéntame sobre tu proyecto..." required data-form-input></textarea>
+              </div>
+              <button type="submit" class="submit-btn" disabled data-form-btn>
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+                Enviar Mensaje
+              </button>
+            </form>
+          </div>
+        </div>
 
       </article>
 
     </div>
+  </div>
 
-  </main>
-
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
+  <!-- Ionicons (kept for backwards compatibility) -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
