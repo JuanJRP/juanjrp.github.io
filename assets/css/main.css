@@ -294,6 +294,15 @@ ul, ol { margin: 0; padding: 0; }
 .term-bar span { margin-left: auto; margin-right: auto; padding-right: 50px; }
 .term-body { padding: 16px 20px 20px; min-height: 340px; overflow-x: auto; }
 .term-body .line { white-space: pre; }
+.term-body { max-height: 480px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--term-line) transparent; }
+.term-out .line { white-space: pre-wrap; overflow-wrap: anywhere; }
+.term-out a { color: #79c0ff; text-decoration: underline; text-underline-offset: 3px; }
+.term-form { display: flex; align-items: center; gap: 8px; }
+.term-input {
+  flex: 1; min-width: 0; background: transparent; border: 0; padding: 0; outline: none;
+  color: var(--term-text); font: inherit; caret-color: var(--term-accent);
+}
+.term-form:focus-within { box-shadow: 0 1px 0 var(--term-accent); }
 .term-body .ps { color: var(--term-accent); }
 .term-body .dim { color: var(--term-muted); }
 .term-body .hl { color: #e6edf3; }

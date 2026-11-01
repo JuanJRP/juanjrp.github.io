@@ -100,7 +100,80 @@
     }
   });
 
-  if (reduceMotion) return;
+  // --- Interactive terminal: once the intro finishes, visitors can type commands (help, projects, cv…).
+  // Everything it prints is read from the page itself, so it never goes out of sync with the content.
+  const termForm = document.querySelector("[data-term-form]");
+  const termOut = document.querySelector("[data-term-out]");
+  const termInput = termForm?.querySelector("input");
+  const es = root.lang.startsWith("es");
+  const T = es
+    ? { hint: "escribe help y presiona Enter", notFound: (c) => `comando no encontrado: ${c} · prueba help`,
+        help: "comandos:", sudo: "permiso denegado. Pero puedes contratarme → contacto", opening: "abriendo",
+        theme: "tema cambiado", empty: "(vacío)" }
+    : { hint: "type help and press Enter", notFound: (c) => `command not found: ${c} · try help`,
+        help: "commands:", sudo: "permission denied. But you can hire me → contact", opening: "opening",
+        theme: "theme switched", empty: "(empty)" };
+
+  const text = (sel) => document.querySelector(sel)?.textContent.trim().replace(/\s+/g, " ") ?? "";
+  const linkTo = (href, label) => { const a = document.createElement("a"); a.href = href; a.textContent = label; return a; };
+  const contactId = es ? "#contacto" : "#contact";
+  const cvLink = document.querySelector('a[href$=".pdf"]');
+
+  const COMMANDS = {
+    help: () => [T.help, ...Object.keys(COMMANDS).filter((k) => !ALIASES[k]).map((k) => `  ${k}`)],
+    whoami: () => [`Juan José Restrepo — ${es ? "Ingeniero de Software" : "Software Engineer"}`, text(".status")],
+    [es ? "experiencia" : "experience"]: () => [...document.querySelectorAll(".job")].map((j) =>
+      `${j.querySelector(".job-period").textContent.padEnd(22)} ${j.querySelector("h3").textContent}`),
+    [es ? "proyectos" : "projects"]: () => [...document.querySelectorAll("article.project h3 a")].map((a) => linkTo(a.href, `./${a.textContent}`)),
+    stack: () => [...document.querySelectorAll(".stack-row")].map((r) =>
+      `${r.querySelector("dt").textContent.padEnd(15)} ${[...r.querySelectorAll("li")].map((li) => li.textContent).join(" · ")}`),
+    cv: () => (cvLink ? [linkTo(cvLink.href, cvLink.href.split("/").pop())] : []),
+    [es ? "contacto" : "contact"]: () => { location.hash = contactId; return [`${T.opening} ${contactId}…`]; },
+    github: () => [linkTo("https://github.com/JuanJRP", "github.com/JuanJRP")],
+    linkedin: () => [linkTo("https://www.linkedin.com/in/juan-jose-restrepo-pabon-96107b2a7/", "in/juan-jose-restrepo-pabon")],
+    [es ? "tema" : "theme"]: () => { document.querySelector("[data-theme-toggle]")?.click(); return [T.theme]; },
+    clear: () => { termOut.replaceChildren(); return null; },
+    sudo: () => [T.sudo],
+  };
+  const ALIASES = { ls: es ? "proyectos" : "projects", cat: "whoami", "?": "help", hire: es ? "contacto" : "contact" };
+  Object.entries(ALIASES).forEach(([alias, target]) => { COMMANDS[alias] = COMMANDS[target]; });
+
+  const print = (items, cls = "") => {
+    for (const item of items) {
+      const div = document.createElement("div");
+      div.className = `line ${cls}`.trim();
+      if (typeof item === "string") div.textContent = item; else div.append(item);
+      termOut.append(div);
+    }
+    termOut.parentElement.scrollTop = termOut.parentElement.scrollHeight;
+  };
+
+  const enableTerminal = () => {
+    if (!termForm || !termInput) return;
+    document.querySelector(".cursor-line")?.setAttribute("hidden", "");
+    termForm.hidden = false;
+    print([T.hint], "dim");
+  };
+
+  termForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const raw = termInput.value.trim();
+    termInput.value = "";
+    if (!raw) return;
+    const [cmd] = raw.toLowerCase().split(/\s+/);
+    const echo = document.createElement("span");
+    echo.innerHTML = '<span class="ps">~$</span> ';
+    echo.append(raw);
+    print([echo]);
+    const run = COMMANDS[cmd.replace(/^\.\//, "")];
+    const out = run ? run() : [T.notFound(cmd)];
+    if (out) print(out.length ? out : [T.empty], run ? "" : "dim");
+  });
+  document.querySelector("[data-term]")?.addEventListener("click", (e) => {
+    if (!termForm?.hidden && !e.target.closest("a") && !window.getSelection()?.toString()) termInput.focus({ preventScroll: true });
+  });
+
+  if (reduceMotion) { enableTerminal(); return; }
 
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -144,6 +217,8 @@
         }
       }
       if (cursor) cursor.hidden = false;
+      await sleep(600);
+      enableTerminal();
     };
 
     const io = new IntersectionObserver((entries, obs) => {

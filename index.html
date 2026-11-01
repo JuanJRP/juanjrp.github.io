@@ -112,24 +112,29 @@
             </div>
           </div>
 
-          <div class="terminal enter" style="--i:3" role="img" aria-label="Terminal con un resumen: cargo actual, stack y trayectoria">
+          <div class="terminal enter" style="--i:3" data-term>
             <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>juan@restrepo: ~</span></div>
-            <div class="term-body" data-terminal aria-hidden="true">
-              <div class="line"><span class="ps">~$</span> <span class="typed">whoami</span></div>
-              <div class="line hl">Juan José Restrepo — Ingeniero de Software</div>
-              <div class="line"><span class="ps">~$</span> <span class="typed">cat ahora.txt</span></div>
-              <div class="line">Analista de Tecnología Comercial</div>
-              <div class="line dim">@ VP Redes Comerciales · Grupo Nutresa</div>
-              <div class="line"><span class="ps">~$</span> <span class="typed">ls ~/stack</span></div>
-              <div class="line"><span class="blue">flutter/</span>     <span class="blue">react/</span>    <span class="blue">apps-script/</span> <span class="blue">bigquery/</span></div>
-              <div class="line"><span class="blue">sql-server/</span>  <span class="blue">sap-bo/</span>   <span class="blue">power-bi/</span>    <span class="blue">next.js/</span></div>
-              <div class="line"><span class="blue">python/</span>      <span class="blue">docker/</span>   <span class="blue">pyspark/</span>     <span class="blue">esp32/</span></div>
-              <div class="line"><span class="ps">~$</span> <span class="typed">git log --oneline carrera</span></div>
-              <div class="line"><span class="dim">a1f3c9e</span> oct 2026  Tecnología Comercial</div>
-              <div class="line"><span class="dim">5d91a7f</span> jul 2026  Ingeniero de Software 🎓</div>
-              <div class="line"><span class="dim">7be20d4</span> jun 2026  Transformación Digital</div>
-              <div class="line"><span class="dim">2e7b6a1</span> jul 2025  Practicante · Nutresa</div>
-              <div class="cursor-line"><span class="ps">~$</span> <span class="cursor"></span></div>
+            <div class="term-body" data-terminal>
+              <div aria-hidden="true" class="line"><span class="ps">~$</span> <span class="typed">whoami</span></div>
+              <div aria-hidden="true" class="line hl">Juan José Restrepo — Ingeniero de Software</div>
+              <div aria-hidden="true" class="line"><span class="ps">~$</span> <span class="typed">cat ahora.txt</span></div>
+              <div aria-hidden="true" class="line">Analista de Tecnología Comercial</div>
+              <div aria-hidden="true" class="line dim">@ VP Redes Comerciales · Grupo Nutresa</div>
+              <div aria-hidden="true" class="line"><span class="ps">~$</span> <span class="typed">ls ~/stack</span></div>
+              <div aria-hidden="true" class="line"><span class="blue">flutter/</span>     <span class="blue">react/</span>    <span class="blue">apps-script/</span> <span class="blue">bigquery/</span></div>
+              <div aria-hidden="true" class="line"><span class="blue">sql-server/</span>  <span class="blue">sap-bo/</span>   <span class="blue">power-bi/</span>    <span class="blue">next.js/</span></div>
+              <div aria-hidden="true" class="line"><span class="blue">python/</span>      <span class="blue">docker/</span>   <span class="blue">pyspark/</span>     <span class="blue">esp32/</span></div>
+              <div aria-hidden="true" class="line"><span class="ps">~$</span> <span class="typed">git log --oneline carrera</span></div>
+              <div aria-hidden="true" class="line"><span class="dim">a1f3c9e</span> oct 2026  Tecnología Comercial</div>
+              <div aria-hidden="true" class="line"><span class="dim">5d91a7f</span> jul 2026  Ingeniero de Software 🎓</div>
+              <div aria-hidden="true" class="line"><span class="dim">7be20d4</span> jun 2026  Transformación Digital</div>
+              <div aria-hidden="true" class="line"><span class="dim">2e7b6a1</span> jul 2025  Practicante · Nutresa</div>
+              <div class="cursor-line" aria-hidden="true"><span class="ps">~$</span> <span class="cursor"></span></div>
+              <div class="term-out" data-term-out aria-live="polite"></div>
+              <form class="term-form" data-term-form hidden>
+                <label class="ps" for="term-cmd">~$</label>
+                <input id="term-cmd" class="term-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="send" aria-label="Escribe un comando para la terminal; prueba help">
+              </form>
             </div>
           </div>
         </div>
