@@ -314,6 +314,8 @@ ul, ol { margin: 0; padding: 0; }
 .fact:hover { background: var(--surface); }
 .fact dt { font-family: var(--font-mono); font-size: 12px; color: var(--faint); text-transform: uppercase; letter-spacing: 0.06em; }
 .fact dd { margin: 4px 0 0; font-size: 15px; font-weight: 500; }
+.wins .fact dt { font-size: 26px; font-weight: 600; color: var(--accent); text-transform: none; letter-spacing: -0.02em; line-height: 1.1; }
+.wins .fact dd { margin-top: 6px; font-size: 13.5px; font-weight: 400; color: var(--muted); line-height: 1.45; }
 
 /* --- sections ------------------------------------------------------------ */
 
