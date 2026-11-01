@@ -2,15 +2,19 @@
 
 Personal site of Juan José Restrepo — <https://juanjrp.github.io>
 
-Plain HTML, CSS and a few lines of JavaScript. No build step, no framework.
+Plain HTML, CSS and vanilla JavaScript. No build step, no framework.
+
+- Typing terminal, rotating role, scroll reveals and timeline progress (all disabled with `prefers-reduced-motion`)
+- Project filters and cursor spotlight on cards
+- Contact form delivered by [FormSubmit](https://formsubmit.co) (no backend needed)
 
 ```
 index.html          Spanish (default)
 en/index.html       English
 assets/css/main.css Design tokens, light/dark themes, layout
-assets/js/main.js   Theme toggle
+assets/js/main.js   Theme, motion, filters, contact form
 assets/images/      Portrait and social preview (og.png)
-assets/docs/es/     Résumé (PDF)
+assets/docs/        Résumé PDFs (es/ and en/), generated from ../cv/build.py
 ```
 
 Run locally:

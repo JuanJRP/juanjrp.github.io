@@ -7,7 +7,7 @@
   <meta name="description" content="Software engineer in Medellín, Colombia. Enterprise integrations (Dataverse, SAP, APIs), data and BI, and full-stack development. Currently at Nutrefríos · Grupo Nutresa.">
   <meta name="author" content="Juan José Restrepo Pabón">
   <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#0b0f14" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://juanjrp.github.io/en/">
   <link rel="alternate" hreflang="es" href="https://juanjrp.github.io/">
   <link rel="alternate" hreflang="en" href="https://juanjrp.github.io/en/">
@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/main.css">
-  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 
   <script type="application/ld+json">
   {
@@ -58,6 +58,7 @@
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#stack">Stack</a></li>
+          <li><a href="#education">Education</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <a class="nav-tool" href="/" hreflang="es" lang="es" title="Leer en español">ES</a>
@@ -73,24 +74,31 @@
 
     <!-- Hero -->
     <section class="hero">
+      <div class="backdrop" aria-hidden="true"></div>
       <div class="wrap">
         <div class="hero-grid">
           <div>
-            <p class="status"><span class="status-dot" aria-hidden="true"></span>Commercial Technology Analyst · Nutrefríos</p>
-            <h1>Juan José Restrepo<span class="role">Software Engineer</span></h1>
-            <p class="lede">
+            <div class="who enter" style="--i:0">
+              <img class="portrait" src="/assets/images/juan.jpg" width="56" height="56" alt="Portrait of Juan José Restrepo">
+              <p class="status"><span class="status-dot" aria-hidden="true"></span>Commercial Technology Analyst · Nutrefríos</p>
+            </div>
+            <h1 class="enter" style="--i:1">Juan José<br><span class="name-2">Restrepo</span></h1>
+            <p class="rotator enter" style="--i:2" data-rotate='["Software Engineer", "enterprise integrations", "data & BI", "full-stack development", "IoT & prototypes"]'>
+              <span class="prompt">&gt;</span> <span class="word">Software Engineer</span><span class="caret" aria-hidden="true"></span>
+            </p>
+            <p class="lede enter" style="--i:3">
               I connect a company's systems —<strong>Dataverse, SAP and APIs</strong>— and turn their data into
               information the business uses to make decisions. Outside work I build full-stack apps,
-              data pipelines and IoT prototypes.
+              data pipelines, AI models and IoT prototypes.
             </p>
-            <div class="actions">
-              <a class="btn btn-primary" href="mailto:juanjoserestrepopabon@gmail.com">
+            <div class="actions enter" style="--i:4">
+              <a class="btn btn-primary" href="#contact">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-                Email me
+                Get in touch
               </a>
-              <a class="btn" href="/assets/docs/es/CV_Juan_Jose_Restrepo_Pabon.pdf" download>
+              <a class="btn" href="/assets/docs/en/Resume_Juan_Jose_Restrepo_Pabon.pdf" download>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
-                Résumé (ES)
+                Résumé
               </a>
               <a class="btn" href="https://github.com/JuanJRP" rel="me">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
@@ -102,13 +110,33 @@
               </a>
             </div>
           </div>
-          <img class="portrait" src="/assets/images/juan.jpg" width="184" height="184" alt="Portrait of Juan José Restrepo">
+
+          <div class="terminal enter" style="--i:3" role="img" aria-label="Terminal with a summary: current role, stack and career">
+            <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>juan@restrepo: ~</span></div>
+            <div class="term-body" data-terminal aria-hidden="true">
+              <div class="line"><span class="ps">~$</span> <span class="typed">whoami</span></div>
+              <div class="line hl">Juan José Restrepo — Software Engineer</div>
+              <div class="line"><span class="ps">~$</span> <span class="typed">cat now.txt</span></div>
+              <div class="line">Commercial Technology Analyst</div>
+              <div class="line dim">@ Nutrefríos · Grupo Nutresa</div>
+              <div class="line"><span class="ps">~$</span> <span class="typed">ls ~/stack</span></div>
+              <div class="line"><span class="blue">dataverse/</span>  <span class="blue">sap/</span>      <span class="blue">power-bi/</span>  <span class="blue">sql/</span></div>
+              <div class="line"><span class="blue">next.js/</span>    <span class="blue">react/</span>    <span class="blue">node/</span>      <span class="blue">python/</span></div>
+              <div class="line"><span class="blue">pyspark/</span>    <span class="blue">docker/</span>   <span class="blue">aws/</span>       <span class="blue">esp32/</span></div>
+              <div class="line"><span class="ps">~$</span> <span class="typed">git log --oneline career</span></div>
+              <div class="line"><span class="dim">a1f3c9e</span> oct 2026  Commercial Technology</div>
+              <div class="line"><span class="dim">5d91a7f</span> jul 2026  B.Sc. Software Engineering 🎓</div>
+              <div class="line"><span class="dim">7be20d4</span> jun 2026  Digital Transformation</div>
+              <div class="line"><span class="dim">2e7b6a1</span> jul 2025  Intern · Nutresa</div>
+              <div class="cursor-line"><span class="ps">~$</span> <span class="cursor"></span></div>
+            </div>
+          </div>
         </div>
 
-        <dl class="facts">
+        <dl class="facts reveal">
           <div class="fact"><dt>Based in</dt><dd>Medellín, Colombia</dd></div>
-          <div class="fact"><dt>Degree</dt><dd>B.Sc. Software Eng., 2026</dd></div>
-          <div class="fact"><dt>Focus</dt><dd>Integrations · Data</dd></div>
+          <div class="fact"><dt>Degree</dt><dd>B.Sc. Software Eng. · Licensed</dd></div>
+          <div class="fact"><dt>Focus</dt><dd>Integrations · Data · Web</dd></div>
           <div class="fact"><dt>Languages</dt><dd>Spanish · English B2</dd></div>
         </dl>
       </div>
@@ -117,39 +145,39 @@
     <!-- Experience -->
     <section class="section" id="experience">
       <div class="wrap section-grid">
-        <div class="section-label">01<h2>Experience</h2></div>
+        <div class="section-label reveal">01 / experience<h2>Where I've worked</h2><p>Digital transformation and integrations at Grupo Nutresa.</p></div>
         <ol class="jobs">
-          <li class="job">
+          <li class="job current">
             <p class="job-period">Oct 2026 — now</p>
             <div>
               <h3>Commercial Technology Analyst</h3>
               <p class="job-org">Nutrefríos · Grupo Nutresa <span class="now">current</span></p>
               <ul>
-                <li>Integrations between the company's commercial systems: Dataverse, REST APIs and SAP.</li>
+                <li>Integrating the company's commercial systems with Dataverse, REST APIs and SAP.</li>
                 <li>BI reports and dashboards for the sales teams.</li>
               </ul>
             </div>
           </li>
           <li class="job">
-            <p class="job-period">Jul — Oct 2026</p>
+            <p class="job-period">Jun — Oct 2026</p>
             <div>
               <h3>Digital Transformation &amp; Technology Analyst</h3>
-              <p class="job-org">Meat Business Unit · Grupo Nutresa</p>
+              <p class="job-org">Alimentos Cárnicos (Meat Business Unit) · Grupo Nutresa</p>
               <ul>
-                <li>Migration of processes and tools to the Microsoft ecosystem (Power Platform, Dataverse).</li>
-                <li>Automations and integrations for internal business processes.</li>
+                <li>Migrated processes and tools to the Microsoft ecosystem (Power Platform, Dataverse).</li>
+                <li>Built automations and system integrations for internal business processes.</li>
               </ul>
             </div>
           </li>
           <li class="job">
-            <p class="job-period">Feb — Jul 2026</p>
+            <p class="job-period">Feb — May 2026</p>
             <div>
-              <h3>Digital Transformation Analyst</h3>
-              <p class="job-org">Nases Colombia, for Alimentos Cárnicos · Grupo Nutresa</p>
+              <h3>Digital Transformation &amp; Technology Analyst</h3>
+              <p class="job-org">Nases EST, on assignment at Alimentos Cárnicos · Grupo Nutresa</p>
               <ul>
                 <li>Automations that cut operating time in internal processes.</li>
                 <li>Internal tools for administrative and operational processes.</li>
-                <li>Data modeling and optimization to improve integrity and availability.</li>
+                <li>Optimized data structures to improve integrity and availability.</li>
               </ul>
             </div>
           </li>
@@ -159,7 +187,7 @@
               <h3>Digital Transformation Intern</h3>
               <p class="job-org">Alimentos Cárnicos S.A.S. · Grupo Nutresa</p>
               <ul>
-                <li>Internal applications to improve business processes.</li>
+                <li>Internal applications to improve business processes, including support and maintenance.</li>
                 <li>Database design and deployment of cloud services.</li>
               </ul>
             </div>
@@ -179,49 +207,69 @@
     </section>
 
     <!-- Projects -->
-    <section class="section" id="projects">
+    <section class="section alt" id="projects">
       <div class="wrap section-grid">
-        <div class="section-label">02<h2>Projects</h2></div>
+        <div class="section-label reveal">02 / portfolio<h2>Projects</h2><p>A selection of my public repositories.</p></div>
         <div>
+          <div class="filters reveal" role="group" aria-label="Filter projects">
+            <button class="filter" type="button" data-filter="all" aria-pressed="true">all</button>
+            <button class="filter" type="button" data-filter="ai" aria-pressed="false">ai &amp; vision</button>
+            <button class="filter" type="button" data-filter="data" aria-pressed="false">data</button>
+            <button class="filter" type="button" data-filter="web" aria-pressed="false">web</button>
+            <button class="filter" type="button" data-filter="backend" aria-pressed="false">backend</button>
+            <button class="filter" type="button" data-filter="iot" aria-pressed="false">iot</button>
+          </div>
           <div class="projects">
-            <article class="project">
-              <p class="project-kind">Computer vision</p>
-              <h3><a href="https://github.com/JuanJRP/cyber-vanish">cyber-vanish</a></h3>
-              <p class="project-desc">Snap your fingers and vanish from a video call. Detects the gesture through camera and microphone and renders 14 disintegration effects into a virtual camera that works in Meet, Zoom, Teams and OBS.</p>
-              <div class="project-foot">
-                <ul class="tags"><li>Python</li><li>MediaPipe</li><li>OpenCV</li></ul>
-                <span class="arrow" aria-hidden="true">code →</span>
-              </div>
+            <article class="project featured reveal" data-tags="ai">
+              <div class="project-top"><p class="project-kind">computer vision</p><span class="project-star">featured</span></div>
+              <h3><a href="https://github.com/JuanJRP/cyber-vanish">cyber-vanish</a><span class="repo">JuanJRP/cyber-vanish</span></h3>
+              <p class="project-desc">Snap your fingers and vanish from a video call. Detects the gesture through camera and microphone in real time and renders 14 disintegration effects into a virtual camera for Meet, Zoom, Teams and OBS.</p>
+              <div class="project-foot"><ul class="tags"><li>Python</li><li>MediaPipe</li><li>OpenCV</li></ul><span class="arrow" aria-hidden="true">code →</span></div>
             </article>
-            <article class="project">
-              <p class="project-kind">Data engineering</p>
-              <h3><a href="https://github.com/JuanJRP/Pepiline_Taxis_NYC">NYC Taxi pipeline</a></h3>
-              <p class="project-desc">End-to-end batch pipeline over the public NYC TLC trip data: ingestion, PySpark processing, Parquet and MongoDB storage, and demand and revenue charts.</p>
-              <div class="project-foot">
-                <ul class="tags"><li>PySpark</li><li>Docker</li><li>MongoDB</li></ul>
-                <span class="arrow" aria-hidden="true">code →</span>
-              </div>
+            <article class="project featured reveal" data-tags="data" style="--i:1">
+              <div class="project-top"><p class="project-kind">data engineering</p><span class="project-star">featured</span></div>
+              <h3><a href="https://github.com/JuanJRP/Pepiline_Taxis_NYC">nyc-taxi-pipeline</a><span class="repo">JuanJRP/Pepiline_Taxis_NYC</span></h3>
+              <p class="project-desc">End-to-end batch pipeline over public NYC taxi trip data: ingestion, distributed processing with PySpark, Parquet and MongoDB storage, and demand and revenue analysis.</p>
+              <div class="project-foot"><ul class="tags"><li>PySpark</li><li>Docker</li><li>MongoDB</li></ul><span class="arrow" aria-hidden="true">code →</span></div>
             </article>
-            <article class="project">
-              <p class="project-kind">IoT · Health</p>
-              <h3><a href="https://github.com/JuanJRP/MedicalHandle_ESP32">MedicalHandle</a></h3>
-              <p class="project-desc">Wearable that measures heart rate, SpO₂ and body temperature, shows them on an OLED display and logs readings to Excel.</p>
-              <div class="project-foot">
-                <ul class="tags"><li>ESP32</li><li>C++</li><li>Sensors</li></ul>
-                <span class="arrow" aria-hidden="true">code →</span>
-              </div>
+            <article class="project featured reveal" data-tags="ai data">
+              <div class="project-top"><p class="project-kind">generative ai</p><span class="project-star">featured</span></div>
+              <h3><a href="https://github.com/JuanJRP/LLMs_Proyect">llm-finetuning</a><span class="repo">JuanJRP/LLMs_Proyect</span></h3>
+              <p class="project-desc">LoRA fine-tuning of DeepSeek-R1 on a custom dataset of ~106K consumer-goods Q&amp;A pairs, served through a Telegram bot.</p>
+              <div class="project-foot"><ul class="tags"><li>Python</li><li>Hugging Face</li><li>LoRA</li></ul><span class="arrow" aria-hidden="true">code →</span></div>
             </article>
-            <article class="project">
-              <p class="project-kind">Full-stack web</p>
-              <h3><a href="https://github.com/JuanJRP/Threat-Manager">Threat Manager</a></h3>
-              <p class="project-desc">App to log, classify and track security threats, with a Next.js frontend and a Node.js API over a relational schema managed with Prisma.</p>
-              <div class="project-foot">
-                <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>Prisma</li></ul>
-                <span class="arrow" aria-hidden="true">code →</span>
-              </div>
+            <article class="project featured reveal" data-tags="iot" style="--i:1">
+              <div class="project-top"><p class="project-kind">iot · health</p><span class="project-star">featured</span></div>
+              <h3><a href="https://github.com/JuanJRP/MedicalHandle_ESP32">medical-handle</a><span class="repo">JuanJRP/MedicalHandle_ESP32</span></h3>
+              <p class="project-desc">Vital-signs wristband: heart rate, SpO₂, body and ambient temperature, with an OLED display and data logging to Excel.</p>
+              <div class="project-foot"><ul class="tags"><li>ESP32</li><li>C++</li><li>Sensors</li></ul><span class="arrow" aria-hidden="true">code →</span></div>
+            </article>
+            <article class="project reveal" data-tags="web">
+              <div class="project-top"><p class="project-kind">web full stack</p></div>
+              <h3><a href="https://github.com/JuanJRP/Threat-Manager">threat-manager</a><span class="repo">JuanJRP/Threat-Manager</span></h3>
+              <p class="project-desc">Security threat manager: Next.js frontend with global state and a Node.js API over a relational schema with Prisma migrations.</p>
+              <div class="project-foot"><ul class="tags"><li>Next.js</li><li>TypeScript</li><li>Prisma</li></ul><span class="arrow" aria-hidden="true">code →</span></div>
+            </article>
+            <article class="project reveal" data-tags="backend" style="--i:1">
+              <div class="project-top"><p class="project-kind">rest api</p></div>
+              <h3><a href="https://github.com/JuanJRP/ReserlyAPI">reserly-api</a><span class="repo">JuanJRP/ReserlyAPI</span></h3>
+              <p class="project-desc">Booking API with users, services and roles: repository pattern, EF Core migrations and Swagger docs. Includes a MongoDB Atlas variant.</p>
+              <div class="project-foot"><ul class="tags"><li>C#</li><li>ASP.NET Core</li><li>SQL Server</li></ul><span class="arrow" aria-hidden="true">code →</span></div>
+            </article>
+            <article class="project reveal" data-tags="backend web">
+              <div class="project-top"><p class="project-kind">authentication</p></div>
+              <h3><a href="https://github.com/JuanJRP/Login_Nodejs">login-nodejs</a><span class="repo">JuanJRP/Login_Nodejs</span></h3>
+              <p class="project-desc">Sign-up and login with bcrypt-hashed passwords and JWT authentication on MongoDB and Mongoose.</p>
+              <div class="project-foot"><ul class="tags"><li>Node.js</li><li>Express</li><li>JWT</li></ul><span class="arrow" aria-hidden="true">code →</span></div>
+            </article>
+            <article class="project reveal" data-tags="data" style="--i:1">
+              <div class="project-top"><p class="project-kind">scientific python</p></div>
+              <h3><a href="https://github.com/JuanJRP/Polynomial_Grapher">polynomial-grapher</a><span class="repo">JuanJRP/Polynomial_Grapher</span></h3>
+              <p class="project-desc">Interactive polynomial grapher with a desktop GUI and PDF export of the results.</p>
+              <div class="project-foot"><ul class="tags"><li>Python</li><li>Matplotlib</li><li>ReportLab</li></ul><span class="arrow" aria-hidden="true">code →</span></div>
             </article>
           </div>
-          <p class="more">More work at <a href="https://github.com/JuanJRP?tab=repositories">github.com/JuanJRP</a>.</p>
+          <p class="others reveal"><b>// also</b>Numerical methods (Python, SciPy) · ContactManager (.NET, MongoDB) · Health-provider portal (Express, EJS) · InfoCyberSecurity (Prolog) · Web scraping (Selenium, XPath) · Algorithms (JavaScript, PSeInt) — all at <a href="https://github.com/JuanJRP?tab=repositories">github.com/JuanJRP</a></p>
         </div>
       </div>
     </section>
@@ -229,36 +277,34 @@
     <!-- Stack -->
     <section class="section" id="stack">
       <div class="wrap section-grid">
-        <div class="section-label">03<h2>Stack</h2></div>
+        <div class="section-label reveal">03 / stack<h2>What I work with</h2><p>From the ERP to the browser, through the data.</p></div>
         <dl class="stack">
-          <div class="stack-row"><dt>Languages</dt><dd><ul class="tags"><li>TypeScript</li><li>Python</li><li>C#</li><li>SQL</li><li>Dart</li></ul></dd></div>
-          <div class="stack-row"><dt>Web &amp; mobile</dt><dd><ul class="tags"><li>Next.js</li><li>React</li><li>Node.js</li><li>Express</li><li>Tailwind CSS</li><li>Flutter</li></ul></dd></div>
-          <div class="stack-row"><dt>Data</dt><dd><ul class="tags"><li>SQL Server</li><li>PostgreSQL</li><li>BigQuery</li><li>MongoDB</li><li>PySpark</li><li>Power BI</li></ul></dd></div>
-          <div class="stack-row"><dt>Enterprise</dt><dd><ul class="tags"><li>Dataverse</li><li>Power Automate</li><li>SAP integrations</li><li>Apps Script</li><li>n8n</li></ul></dd></div>
-          <div class="stack-row"><dt>Cloud &amp; tools</dt><dd><ul class="tags"><li>AWS</li><li>Docker</li><li>Linux</li><li>Git</li></ul></dd></div>
-          <div class="stack-row"><dt>IoT</dt><dd><ul class="tags"><li>ESP32</li><li>Arduino</li><li>Biometric sensors</li></ul></dd></div>
+          <div class="stack-row reveal"><dt>languages</dt><dd><ul class="tags"><li>TypeScript</li><li>JavaScript</li><li>Python</li><li>C#</li><li>SQL</li><li>Dart</li></ul></dd></div>
+          <div class="stack-row reveal"><dt>web · mobile</dt><dd><ul class="tags"><li>Next.js</li><li>React</li><li>Node.js</li><li>Express</li><li>Tailwind CSS</li><li>Flutter</li></ul></dd></div>
+          <div class="stack-row reveal"><dt>data</dt><dd><ul class="tags"><li>SQL Server</li><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>BigQuery</li><li>PySpark</li><li>Power BI</li></ul></dd></div>
+          <div class="stack-row reveal"><dt>enterprise</dt><dd><ul class="tags"><li>Dataverse</li><li>Power Platform</li><li>Power Automate</li><li>SAP integrations</li><li>Apps Script</li><li>n8n</li></ul></dd></div>
+          <div class="stack-row reveal"><dt>ai</dt><dd><ul class="tags"><li>Hugging Face</li><li>LoRA</li><li>MediaPipe</li><li>OpenCV</li></ul></dd></div>
+          <div class="stack-row reveal"><dt>cloud · devops</dt><dd><ul class="tags"><li>AWS</li><li>Docker</li><li>Linux</li><li>Git</li><li>GitHub</li><li>GitLab</li></ul></dd></div>
+          <div class="stack-row reveal"><dt>iot</dt><dd><ul class="tags"><li>ESP32</li><li>Arduino</li><li>Biometric sensors</li></ul></dd></div>
         </dl>
       </div>
     </section>
 
     <!-- Education -->
-    <section class="section" id="education">
+    <section class="section alt" id="education">
       <div class="wrap section-grid">
-        <div class="section-label">04<h2>Education</h2></div>
+        <div class="section-label reveal">04 / education<h2>Education</h2></div>
         <ul class="edu">
-          <li>
+          <li class="reveal">
             <p class="when">2021 — 2026</p>
-            <div>
-              <h3>B.Sc. Software Engineering</h3>
-              <p>Institución Universitaria Pascual Bravo · Medellín</p>
-            </div>
+            <h3>B.Sc. Software Engineering</h3>
+            <p>Institución Universitaria Pascual Bravo · Medellín</p>
+            <p class="note">GPA 4.3 / 5.0 · Professional license (COPNIA)</p>
           </li>
-          <li>
+          <li class="reveal" style="--i:1">
             <p class="when">2019 — 2020</p>
-            <div>
-              <h3>Technical degree, Leather Goods Manufacturing</h3>
-              <p>SENA (National Learning Service)</p>
-            </div>
+            <h3>Technical degree, Leather Goods Manufacturing</h3>
+            <p>SENA (National Learning Service)</p>
           </li>
         </ul>
       </div>
@@ -266,15 +312,45 @@
 
     <!-- Contact -->
     <section class="section" id="contact">
-      <div class="wrap section-grid">
-        <div class="section-label">05<h2>Contact</h2></div>
-        <div>
-          <p class="contact-lede">Working on an integration, data or development project — or just want to talk? Send me an email.</p>
-          <a class="contact-mail" href="mailto:juanjoserestrepopabon@gmail.com">juanjoserestrepopabon@gmail.com</a>
-          <div class="contact-links">
-            <a class="btn" href="https://www.linkedin.com/in/juan-jose-restrepo-pabon-96107b2a7/">LinkedIn</a>
-            <a class="btn" href="https://github.com/JuanJRP">GitHub</a>
-            <a class="btn" href="/assets/docs/es/CV_Juan_Jose_Restrepo_Pabon.pdf" download>Résumé (PDF, ES)</a>
+      <div class="wrap">
+        <div class="contact-card reveal">
+          <div class="contact-grid">
+            <div>
+              <p class="ps">~$ ./contact.sh</p>
+              <h3>Let's talk</h3>
+              <p class="contact-lede">Working on an integration, data or development project, or want to talk about an opportunity? Send me a message and I'll get back to you soon.</p>
+              <a class="contact-mail" href="mailto:juanjoserestrepopabon@gmail.com">juanjoserestrepopabon@gmail.com</a>
+              <div class="contact-links">
+                <a class="btn" href="https://www.linkedin.com/in/juan-jose-restrepo-pabon-96107b2a7/">LinkedIn</a>
+                <a class="btn" href="https://github.com/JuanJRP">GitHub</a>
+                <a class="btn" href="/assets/docs/en/Resume_Juan_Jose_Restrepo_Pabon.pdf" download>Résumé (PDF)</a>
+              </div>
+            </div>
+
+            <form class="contact-form" data-contact-form action="https://formsubmit.co/juanjoserestrepopabon@gmail.com" method="POST"
+                  data-msg-sending="Sending…" data-msg-ok="Done! Your message arrived. I'll reply soon." data-msg-error="Couldn't send it. Please email me directly at juanjoserestrepopabon@gmail.com.">
+              <input type="hidden" name="_subject" value="New message from juanjrp.github.io (EN)">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="https://juanjrp.github.io/en/#contact">
+              <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <div class="field">
+                <label for="cf-name">Name</label>
+                <input id="cf-name" name="name" type="text" autocomplete="name" required maxlength="120">
+              </div>
+              <div class="field">
+                <label for="cf-email">Email</label>
+                <input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="160">
+              </div>
+              <div class="field">
+                <label for="cf-msg">Message</label>
+                <textarea id="cf-msg" name="message" rows="5" required maxlength="4000"></textarea>
+              </div>
+              <button class="btn btn-send" type="submit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+                Send message
+              </button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
           </div>
         </div>
       </div>
