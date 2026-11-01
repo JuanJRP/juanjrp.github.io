@@ -540,3 +540,47 @@ ul, ol { margin: 0; padding: 0; }
   .section { padding: 24px 0; break-inside: avoid; }
   .js .reveal, .js .hero .enter { opacity: 1; translate: none; animation: none; }
 }
+
+/* --- case studies ---------------------------------------------------------- */
+
+.case { padding: 48px 0 80px; }
+.case-wrap { max-width: 800px; }
+.case-back { font-family: var(--font-mono); font-size: 13px; color: var(--muted); text-decoration: none; }
+.case-back:hover { color: var(--accent); }
+.case-kind { margin-top: 28px; font-family: var(--font-mono); font-size: 13px; color: var(--accent); }
+.case h1 { margin-top: 6px; font-size: clamp(2.2rem, 5vw, 3.2rem); letter-spacing: -0.03em; line-height: 1.05; }
+.case-lead { margin-top: 18px; font-size: 1.15rem; color: var(--muted); line-height: 1.6; }
+.case-actions { margin-top: 24px; display: flex; gap: 10px; flex-wrap: wrap; }
+.case-facts { margin-top: 36px; }
+@media (min-width: 720px) { .case-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.case section { margin-top: 44px; }
+.case h2 { font-size: 1.35rem; letter-spacing: -0.01em; margin-bottom: 12px; }
+.case section p, .case section li { color: var(--muted); line-height: 1.7; }
+.case section p + p { margin-top: 12px; }
+.case section ul:not(.tags) { padding-left: 20px; display: grid; gap: 8px; }
+.case section b { color: var(--text); font-weight: 600; }
+.case code { font-family: var(--font-mono); font-size: 0.9em; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; }
+.case-diagram {
+  margin: 4px 0 16px; padding: 16px 18px; overflow-x: auto; border-radius: var(--radius);
+  background: var(--term-bg); color: var(--term-text); border: 1px solid var(--term-line);
+  font-family: var(--font-mono); font-size: 12.5px; line-height: 1.7;
+}
+.case-fig { margin: 36px 0 18px; }
+.case-fig img { display: block; max-width: 100%; height: auto; margin: 0 auto; border-radius: var(--radius); border: 1px solid var(--line); }
+.case-fig figcaption { margin-top: 10px; text-align: center; font-size: 13px; color: var(--faint); }
+.chart { display: block; width: 100%; height: auto; font-family: var(--font-mono); font-size: 11px; }
+.chart text { fill: var(--faint); }
+.chart .g { stroke: var(--line); }
+.chart polyline { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linejoin: round; }
+.chart circle { fill: var(--accent); }
+.case-more { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line); }
+.case-more ul { list-style: none; display: grid; gap: 8px; }
+.case-more a { font-weight: 500; }
+.case-more span { font-family: var(--font-mono); font-size: 12px; color: var(--faint); margin-left: 8px; }
+
+/* link from a project card to its case study (sits above the card's stretched link) */
+.case-link {
+  position: relative; z-index: 1; font-family: var(--font-mono); font-size: 11px; text-decoration: none;
+  color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line)); border-radius: 99px; padding: 1px 9px;
+}
+.case-link:hover { background: var(--accent-soft); }

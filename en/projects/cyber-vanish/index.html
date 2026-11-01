@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cyber Vanish · case study · Juan José Restrepo</title>
+  <meta name="description" content="Snap your fingers and vanish from the video call. It detects the gesture and the sound in real time, erases you from the video with one of 14 effects and sends the result to a virtual camera that works in Meet, Zoom, Teams or OBS.">
+  <meta name="author" content="Juan José Restrepo Pabón">
+  <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0f14" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://juanjrp.github.io/en/projects/cyber-vanish/">
+  <link rel="alternate" hreflang="en" href="https://juanjrp.github.io/en/projects/cyber-vanish/">
+  <link rel="alternate" hreflang="es" href="https://juanjrp.github.io/proyectos/cyber-vanish/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://juanjrp.github.io/en/projects/cyber-vanish/">
+  <meta property="og:title" content="Cyber Vanish · case study">
+  <meta property="og:description" content="Snap your fingers and vanish from the video call. It detects the gesture and the sound in real time, erases you from the video with one of 14 effects and sends the result to a virtual camera that works in Meet, Zoom, Teams or OBS.">
+  <meta property="og:image" content="https://juanjrp.github.io/assets/images/og.png">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/en/">juan<span>@</span>restrepo</a>
+      <nav class="nav" aria-label="Main">
+        <a class="nav-tool" href="/proyectos/cyber-vanish/" hreflang="es" lang="es" title="Leer en español">ES</a>
+        <button class="nav-tool theme-toggle" type="button" data-theme-toggle aria-label="Toggle light/dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="case">
+    <div class="wrap case-wrap">
+      <a class="case-back" href="/en/#projects">← back to projects</a>
+      <p class="case-kind">computer vision · real time</p>
+      <h1>Cyber Vanish</h1>
+      <p class="case-lead">Snap your fingers and vanish from the video call. It detects the gesture and the sound in real time, erases you from the video with one of 14 effects and sends the result to a virtual camera that works in Meet, Zoom, Teams or OBS.</p>
+      <div class="case-actions">
+        <a class="btn btn-primary" href="https://github.com/JuanJRP/cyber-vanish">View the code on GitHub</a>
+      </div>
+      <dl class="facts wins case-facts"><div class="fact"><dt>14</dt><dd>disintegration effects</dd></div><div class="fact"><dt>6–25 ms</dt><dd>per frame at 1280×720</dd></div><div class="fact"><dt>2</dt><dd>signals for the snap: image + audio</dd></div></dl>
+      <figure class="case-fig"><img src="/assets/images/cases/cyber-vanish.webp" width="360" height="360" alt="The cyber, dust, fire and matrix effects disintegrating a person" loading="lazy"><figcaption>Four of the effects, rendered with the project's actual code.</figcaption></figure>
+      <section><h2>The challenge</h2><p>Making a person disappear from live video takes three things at once: knowing which pixels are the person, knowing what was behind them, and drawing the transition without freezing the call. All on a laptop CPU, at 30 frames per second.</p></section><section><h2>How it works</h2><pre class="case-diagram">webcam ─► MediaPipe (segmentation + hand) ─┐
+microphone ─► snap detector (audio) ───────┼─► snap? ─► effect (14) ─► virtual camera
+         captured or learned background ──┘                    └─► preview</pre><ul><li><b>Robust trigger:</b> the snap is confirmed by the camera (thumb and middle finger together) and the microphone (a sharp sound) at the same time, so random noise doesn't fire it.</li><li><b>Background:</b> captured from the empty room or learned as you move. What was never seen is rebuilt by copying real room texture (exemplar-based completion), not by stretching edges.</li><li><b>Effects as plugins:</b> each effect is a class that inherits from <code>Vanish</code> and registers itself with a decorator; the base handles states, background, particles and physics.</li></ul></section><section><h2>Technical decisions</h2><ul><li>I tried <b>LaMa</b> (an inpainting neural network) to fill the background: with person-sized holes it left a person-shaped shadow, took 3–4 s on CPU and weighed 208 MB. I dropped it for a classical method that works better here.</li><li>The slow fill (~2 s) runs in the background while a fast one is used, so the video never stalls.</li><li>Blurry layers (flames, smoke, glows) are computed at 1/4 resolution to keep every frame under 25 ms.</li></ul></section><section><h2>Quality</h2><p>Every effect has automated tests that run the full cycle (vanish → invisible → reappear) and check that no trace of the person is left. They run on GitHub Actions with Python 3.10 and 3.12.</p></section>
+      <section><h2>Stack</h2><ul class="tags"><li>Python</li><li>MediaPipe</li><li>OpenCV</li><li>NumPy</li><li>pytest</li><li>GitHub Actions</li></ul></section>
+      <nav class="case-more" aria-label="More case studies"><h2>More case studies</h2><ul><li><a href="/en/projects/nyc-taxi-pipeline/">NYC Taxi Pipeline</a> <span>data engineering · batch</span></li><li><a href="/en/projects/llm-finetuning/">LLM fine-tuning</a> <span>generative ai · fine-tuning</span></li></ul></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© <span data-year>2026</span> Juan José Restrepo Pabón</span>
+      <a href="https://github.com/JuanJRP/juanjrp.github.io">site source</a>
+    </div>
+  </footer>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

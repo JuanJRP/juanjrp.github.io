@@ -10,4 +10,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://juanjrp.github.io/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://juanjrp.github.io/en/"/>
   </url>
+  <url><loc>https://juanjrp.github.io/proyectos/cyber-vanish/</loc></url>
+  <url><loc>https://juanjrp.github.io/en/projects/cyber-vanish/</loc></url>
+  <url><loc>https://juanjrp.github.io/proyectos/nyc-taxi-pipeline/</loc></url>
+  <url><loc>https://juanjrp.github.io/en/projects/nyc-taxi-pipeline/</loc></url>
+  <url><loc>https://juanjrp.github.io/proyectos/llm-finetuning/</loc></url>
+  <url><loc>https://juanjrp.github.io/en/projects/llm-finetuning/</loc></url>
 </urlset>
